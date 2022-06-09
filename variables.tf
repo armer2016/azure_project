@@ -13,11 +13,29 @@ variable address_space {
     default = "10.0.0.0/16"
     description = "please provide address_space"
 }
-variable address_prefix {
+variable address_prefix1 {
     type = list
     description = "please provide address_prefix"
 }
-variable subnet_names {
+variable address_prefix2 {
+    type = list
+    description = "please provide address_prefix"
+}
+variable address_prefix3 {
+    type = list
+    description = "please provide address_prefix"
+}
+variable subnet_names1 {
+    type = list
+    description = "please provide subnet names"
+}
+
+variable subnet_names2 {
+    type = list
+    description = "please provide subnet names"
+}
+
+variable subnet_names3 {
     type = list
     description = "please provide subnet names"
 }

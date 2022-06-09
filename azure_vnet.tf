@@ -30,19 +30,19 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = var.address_space
 
   subnet {
-    name           = var.subnet_names[0]
-    address_prefix = var.address_prefix[0]
+    name           = var.subnet_names1
+    address_prefix = var.address_prefix1
     security_group = azurerm_network_security_group.vnet.id
   }
 
   subnet {
-    name           = var.subnet_names[1]
-    address_prefix = var.address_prefix[1]
+    name           = var.subnet_names2
+    address_prefix = var.address_prefix2
     security_group = azurerm_network_security_group.vnet.id
   }
   subnet {
-    name           = var.subnet_names[2]
-    address_prefix = var.address_prefix[2]
+    name           = var.subnet_names3
+    address_prefix = var.address_prefix3
     security_group = azurerm_network_security_group.vnet.id
   }
 }
