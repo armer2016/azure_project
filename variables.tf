@@ -9,33 +9,33 @@ variable rg_location {
     description = "please provide location"
 }
 variable address_space {
-    type = string
-    default = "10.0.0.0/16"
+    type = list
+    default = ["10.0.0.0/16"]
     description = "please provide address_space"
 }
 variable address_prefix1 {
-    type = list
+    type = string
     description = "please provide address_prefix"
 }
 variable address_prefix2 {
-    type = list
+    type = string
     description = "please provide address_prefix"
 }
 variable address_prefix3 {
-    type = list
+    type = string
     description = "please provide address_prefix"
 }
 variable subnet_names1 {
-    type = list
+    type = string
     description = "please provide subnet names"
 }
 
 variable subnet_names2 {
-    type = list
+    type = string
     description = "please provide subnet names"
 }
 
 variable subnet_names3 {
-    type = list
+    type = string
     description = "please provide subnet names"
 }
