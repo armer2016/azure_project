@@ -1,22 +1,23 @@
-# output "vnet_id" {
-#   value = azurerm_virtual_network.azure_project.id
-# }
+output "vnet_id" {
+    value = azurerm_virtual_network.terraform.id
+}
 
-# output "subnet" {
-#   value = azurerm_virtual_network.azure_project.subnet
-# }
 
-# output "subnet_id" {
-#   value = azurerm_virtual_network.azure_project.subnet.*.id[1]
+output "subnet"{
+    value = azurerm_virtual_network.terraform.subnet
+}
 
-# }
-# output "vnet_name" {
-#   value = azurerm_virtual_network.azure_project.name
-# }
-# output "resource_group_name" {
-#   value = azurerm_resource_group.azure_project.name
-# }
+output "subnet_id" {
+  value = "${azurerm_virtual_network.terraform.subnet.*.id[1]}"
 
-# output "resource_group_location" {
-#   value = azurerm_resource_group.azure_project.location
-# }  
+}
+output "vnet_name"{
+    value = azurerm_virtual_network.terraform.name
+}
+output resource_group_name {
+  value = azurerm_resource_group.terraform.name
+}
+
+output resource_group_location {
+   value = azurerm_resource_group.terraform.location
+}
