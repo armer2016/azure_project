@@ -1,7 +1,7 @@
 # Create a resource group
 resource "azurerm_resource_group" "vnet" {
-  name     = "vnet-resources"
-  location = "westus"
+  name     = var.rg_name
+  location = var.rg_location
 }
 resource "azurerm_network_security_group" "vnet" {
   name                = "terraform-security-group"
@@ -27,22 +27,22 @@ resource "azurerm_virtual_network" "vnet" {
   name                = "vnet_network"
   location            = azurerm_resource_group.vnet.location
   resource_group_name = azurerm_resource_group.vnet.name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = var.address_space
 
   subnet {
-    name           = "subnet1"
-    address_prefix = "10.0.1.0/24"
+    name           = var.subnet_names[0]
+    address_prefix = var.address_prefix[0]
     security_group = azurerm_network_security_group.vnet.id
   }
 
   subnet {
-    name           = "subnet2"
-    address_prefix = "10.0.2.0/24"
+    name           = var.subnet_names[1]
+    address_prefix = var.address_prefix[1]
     security_group = azurerm_network_security_group.vnet.id
   }
   subnet {
-    name           = "subnet3"
-    address_prefix = "10.0.3.0/24"
+    name           = var.subnet_names[2]
+    address_prefix = var.address_prefix[2]
     security_group = azurerm_network_security_group.vnet.id
   }
 }
