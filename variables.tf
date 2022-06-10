@@ -39,3 +39,7 @@ variable "subnet_names3" {
   type        = string
   description = "please provide subnet names"
 }
+variable "vnet_name" {
+  type        = string
+  description = "VNET Name"
+}

@@ -9,7 +9,7 @@ resource "azurerm_network_security_group" "vnet_sg" {
   resource_group_name = azurerm_resource_group.vnet_rg.name
 }
 resource "azurerm_network_security_rule" "vnet_sr" {
-  name                        = "test123"
+  name                        = "outbound_sr"
   priority                    = 100
   direction                   = "Outbound"
   access                      = "Allow"
@@ -24,7 +24,7 @@ resource "azurerm_network_security_rule" "vnet_sr" {
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "vnet" {
-  name                = "vnet_network"
+  name                = var.vnet_name
   location            = azurerm_resource_group.vnet_rg.location
   resource_group_name = azurerm_resource_group.vnet_rg.name
   address_space       = var.address_space
