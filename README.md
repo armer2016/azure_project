@@ -15,4 +15,6 @@ subnet_names2   = "subnet2"
 subnet_names3   = "subnet3"
 
 }
+
 ```
+## Update variable values respectively
